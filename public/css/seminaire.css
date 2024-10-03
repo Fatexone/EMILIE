@@ -1,0 +1,133 @@
+/* Styles généraux pour le corps de la page */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #1B1F3B;
+}
+
+/* Slider en plein écran */
+#slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Le slider occupe toute la hauteur de la fenêtre */
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex; /* Disposer les slides en ligne */
+    width: 100%; /* Ajuster selon le nombre de slides */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Animation du slider */
+}
+
+.slider-container .slide {
+    width: 100%; /* Chaque slide occupe toute la largeur */
+    flex-shrink: 0;
+}
+
+.slider-container .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay pour rendre les textes lisibles sur l'image */
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour assombrir l'image et rendre le texte plus visible */
+    z-index: 1;
+}
+
+/* Style pour centrer le texte par-dessus le slider */
+#slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Texte en blanc */
+    z-index: 2;
+}
+
+#slider-text h2 {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #D4AF37; /* Couleur dorée pour un effet chic */
+}
+
+#slider-text p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: white; /* S'assurer que le texte est en blanc */
+}
+
+/* Styles pour les flèches de navigation */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.slider-arrow.left {
+    left: 10px;
+}
+
+.slider-arrow.right {
+    right: 10px;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Styles pour la section Séminaire */
+#seminaire {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#seminaire h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00539C;
+}
+
+#seminaire p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Footer stylisé */
+footer {
+    background-color: #1B1F3B;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,224 @@
+/* Styles globaux */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #0b0b0c;
+    margin-bottom: 20px;
+}
+
+/* Slider plein écran */
+#slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Le slider occupe toute la hauteur de la fenêtre */
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    width: 100%; /* Ajuste selon le nombre de slides */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Animation fluide du slider */
+}
+
+.slider-container .slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slider-container .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* S'assure que l'image est bien ajustée */
+}
+
+/* Overlay pour rendre les textes lisibles sur le slider */
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(203, 159, 159, 0.4); /* Fond semi-transparent */
+    z-index: 1;
+}
+
+/* Texte centré sur le slider */
+#slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Texte en blanc */
+    z-index: 2;
+}
+
+#slider-text h2 {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white; /* Titre en blanc */
+}
+
+#slider-text p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: white; /* Texte en blanc */
+}
+
+/* Bouton call-to-action */
+.btn-hero {
+    background-color: #D4AF37;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #b59030;
+}
+
+/* Flèches de navigation */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.slider-arrow.left {
+    left: 10px;
+}
+
+.slider-arrow.right {
+    right: 10px;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* About section */
+.about-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.about-text {
+    margin-left: 40px;
+    text-align: left;
+}
+
+.about-title {
+    font-size: 2.5em;
+    color: #00539C;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #00539C;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #003e7a;
+}
+
+/* Footer section */
+footer {
+    background-color: #1B1F3B;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Section Services (si nécessaire) */
+.services-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    width: 300px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.service-item img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}

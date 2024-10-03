@@ -1,0 +1,99 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fa;
+    color: #1B1F3B;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+/* Style du header */
+header {
+    background-color: #1B1F3B;
+    color: #F5F5F5;
+    padding: 1em;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00B4D8;
+}
+
+/* Footer */
+footer {
+    background-color: #1B1F3B;
+    color: #F5F5F5;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #F5F5F5;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00B4D8;
+}
+
+
+/* Ajout d'une animation pour les boutons */
+button {
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Effets visuels pour les éléments de texte */
+p {
+    color: #2b2d42;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Styles modernes pour les liens */
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ef233c;
+    text-decoration: none;
+}

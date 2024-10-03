@@ -1,0 +1,133 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fa;
+    color: #2b2d42;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Styles for the intro title (proverb) */
+.intro-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2b2d42;
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+
+
+/* Conteneur pour le texte d'introduction */
+#intro-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Style pour le texte d'introduction */
+.intro-text {
+    font-size: 1.4rem;
+    color: #333333;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Mise en évidence des phrases importantes */
+.intro-text strong {
+    font-weight: bold;
+    color: #ef233c;
+}
+
+/* Ajouter un espacement entre les paragraphes */
+.intro-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Style pour les citations dans le texte */
+.intro-text blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #555555;
+    margin: 20px auto;
+    padding: 15px;
+    border-left: 4px solid #ef233c;
+    background-color: #f9f9f9;
+}
+
+/* Transition au survol pour un effet moderne */
+#intro-container:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Style pour le titre */
+.title-section {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #2b2d42;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.title-section::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: #ef233c;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Conteneur des conseils Alphaboxe */
+#alphaboxe-conseils {
+    margin-top: 100px; /* Espace sous le header */
+}
+
+/* Conteneur de l'opération mathématique */
+#operation-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+#operation-container:hover {
+    transform: scale(1.02);
+}
+
+/* Conteneur du plateau d'échecs */
+#board-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphaboxe - Partie d'Échecs</title>
+    <link rel="stylesheet" href="/css/style.css"> <!-- Styles globaux -->
+    <link rel="stylesheet" href="/css/alphaboxe.css"> <!-- Styles spécifiques pour la page Alphaboxe -->
+    <link rel="stylesheet" href="/css/chessboard.css"> <!-- Styles pour le plateau d'échecs -->
+</head>
+<body>
+
+    <%- include('partials/header') %>  <!-- Inclusion du header commun -->
+
+<!-- Ajout du proverbe comme titre -->
+<h2 class="intro-title">
+    "La vie est un combat; celui qui refuse le combat refuse la vie." — Socrate
+</h2>
+
+
+  <!-- Conteneur pour le texte d'introduction -->
+  <section id="intro-container">
+    <p class="intro-text">
+        Au fil de mon parcours de vie, j’ai découvert une méthode qui a donné tout son sens sur un ring de boxe : la méthode AlphaBoxe. 
+        C’est en affrontant mes adversaires, en réfléchissant à chaque coup, à chaque placement, que j’ai compris qu’au-delà du simple combat, 
+        la boxe est une véritable leçon de stratégie. Chaque mouvement doit être réfléchi, chaque décision doit être prise avec précision. 
+        Sur le ring, avancer, se repositionner, esquiver, tout cela relève d’un calcul minutieux, et cette approche m’a fait réaliser que ces mêmes principes 
+        pouvaient être appliqués dans le monde de l’entrepreneuriat. Aujourd’hui, j’utilise cette méthode dans mon accompagnement des entrepreneurs. 
+        Je les aide à voir leurs décisions comme des mouvements sur un ring : savoir quand attaquer, quand se repositionner, et comment garder la maîtrise de chaque geste. 
+        La gestion des tensions, la prise de décisions rapides mais réfléchies, tout cela fait écho à ce que j’ai appris lors de mes combats. 
+        C’est cette capacité à agir avec précision et maîtrise que je souhaite transmettre. En attendant de vous rencontrer, je vous propose un petit défi pour aiguiser votre esprit. 
+        À travers ce jeu d’échecs, je vous invite à mobiliser votre réflexion et à forcer votre concentration :
+    </p>
+</section>
+
+
+
+<section id="alphaboxe-conseils">
+    <h2 class="title-section">Partie d'échecs Alphaboxe</h2>
+
+    <!-- Étape 1 : Résolution de l'opération mathématique avec explication cognitive -->
+    <div id="operation-container" class="shadow-box">
+        <p class="highlight-text"><strong>Étape 1 : Résolvez l'opération mathématique pour démarrer le jeu.</strong></p>
+        <p id="operation"></p>
+        <input type="text" id="reponse" placeholder="Votre réponse">
+        <button id="validate" class="btn-primary">Valider</button>
+    </div>
+
+    <!-- Étapes 2 et 3 cachées au début -->
+    <div id="board-container" class="shadow-box" style="display:none;">
+        <p>Étape 2 : Déplacez une pièce sur l'échiquier après validation.</p>
+
+        <!-- Apparition de l'échiquier après validation -->
+        <div id="status-message">
+            <p id="status">C'est à vous de jouer. Déplacez une pièce.</p>
+        </div>
+
+        <div id="board" style="width: 400px; margin: 0 auto;"></div> <!-- Plateau d'échecs -->
+        <p id="coaching-phrase"></p> <!-- Phrase de coaching apparaissant après chaque coup -->
+    </div>
+</section>
+
+    
+
+    <!-- Inclusion des bibliothèques et du script personnalisé -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script> <!-- Chess.js pour la logique du jeu -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/chessboard-1.0.0.min.js"></script> <!-- Chessboard.js pour le plateau -->
+    <script src="/js/chessgame.js"></script> <!-- Ton fichier personnalisé pour gérer le jeu -->
+
+    <script>
+        // Generating the math operation and handling the game start
+        genererOperation();  // Generates the math operation at the start
+
+        // Handle the validation of the math answer and the game start
+        document.getElementById('validate').onclick = function () {
+            var reponse = parseInt(document.getElementById('reponse').value);
+
+            if (reponse === bonneReponse) {
+                // Hide the math operation and show the board
+                document.getElementById('operation-container').style.display = 'none';
+                document.getElementById('board-container').style.display = 'block';
+                mettreAJourStatut("C'est à vous de jouer. Déplacez une pièce.");
+
+                // Initialize the chessboard after validation
+                initialiserEchiquier();
+            } else {
+                alert('Mauvaise réponse, essayez encore !');
+            }
+        };
+
+        // initialiserEchiquier, faireJouerIA, and other chess-related logic will be handled in chessgame.js
+    </script>
+</body>
+</html>

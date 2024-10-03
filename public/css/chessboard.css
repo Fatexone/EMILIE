@@ -1,0 +1,95 @@
+/* Clearfix for floats */
+.clearfix-7da63 {
+    clear: both;
+}
+
+/* Centrage de l'échiquier et du texte */
+#board-container {
+    display: flex;
+    flex-direction: column; /* Permet d'avoir le texte et l'échiquier en colonne */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: auto; /* Ajuste automatiquement à la taille de l'échiquier */
+    padding: 20px;
+}
+
+/* Centrage du texte dans les paragraphes */
+#board-container p, 
+#status-message p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Bordure de l'échiquier */
+.board-b72b1 {
+    border: 3px solid #2b2d42;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour la profondeur */
+    transition: transform 0.3s ease;
+    margin: 0 auto; /* Centre l'échiquier horizontalement */
+}
+
+.board-b72b1:hover {
+    transform: scale(1.02); /* Légère augmentation au survol */
+}
+
+/* Styles des cases de l'échiquier */
+.square-55d63 {
+    float: left;
+    position: relative;
+    user-select: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Couleur des cases blanches */
+.white-1e1d7 {
+    background-color: #f0d9b5;
+    color: #b58863;
+}
+
+/* Couleur des cases noires */
+.black-3c85d {
+    background-color: #b58863;
+    color: #f0d9b5;
+}
+
+/* Effets de survol des cases */
+.square-55d63:hover {
+    background-color: #ffdd57; /* Change la couleur des cases au survol */
+    box-shadow: 0 0 10px rgba(255, 221, 87, 0.7); /* Effet lumineux au survol */
+}
+
+/* Styles de surbrillance des cases sélectionnées */
+.highlight1-32417, .highlight2-9c5d2 {
+    box-shadow: inset 0 0 5px 5px #ef233c; /* Surbrillance rouge pour les cases sélectionnées */
+}
+
+/* Styles pour la notation (lettres et chiffres) autour de l'échiquier */
+.notation-322f9 {
+    cursor: default;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    position: absolute;
+    color: #2b2d42;
+}
+
+/* Positionnement des lettres (alpha) */
+.alpha-d2270 {
+    bottom: 1px;
+    right: 3px;
+}
+
+/* Positionnement des chiffres (numérique) */
+.numeric-fc462 {
+    top: 2px;
+    left: 2px;
+}
+
+/* Animation pour les pièces d'échecs */
+.piece-417db {
+    transition: transform 0.3s ease;
+}
+
+.piece-417db:hover {
+    transform: scale(1.1); /* Légère augmentation au survol pour une meilleure interaction */
+}
