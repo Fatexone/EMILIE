@@ -487,7 +487,7 @@ export default function HomePage() {
       {
         role: "assistant",
         content:
-          current.title === "Debout. Même sans gants."
+          language === "fr"
             ? "Pose ta question à Émilie (coach) : boxe, aviation, facteurs humains, décision en tension."
             : "Ask Emilie (coach) anything: boxing, aviation, human factors, decisions under pressure.",
       },
