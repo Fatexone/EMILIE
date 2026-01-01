@@ -118,7 +118,7 @@ export default function HomePage() {
 
   const data = {
     fr: {
-      title: "Émilie Gignier — cockpit unique",
+      title: "Émilie Gignier — Debout, même sans gants",
       prompt: "Accueil, Services, Séminaires, Outils : tout se pilote d’ici.",
       remote: "Navigation",
       placeholder: "Choisis une section",
