@@ -513,6 +513,18 @@ export default function HomePage() {
     }
 
     if (active.type === "hero") {
+      const chatGroupTitle = language === "fr" ? "Chat Émilie" : "Chat Emilie";
+      const handleChatClick = (event) => {
+        event.preventDefault();
+        const chatSection = sectionMap["chat_emilie"];
+        if (chatSection) {
+          setExpandedGroups((prev) => ({ ...prev, [chatGroupTitle]: true }));
+          setActive(chatSection);
+          const anchor = document.getElementById("chat_emilie");
+          if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      };
+
       return (
         <div className="space-y-3 max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
@@ -530,6 +542,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 pt-2">
             <a
               href={active.ctaPrimary.href}
+              onClick={handleChatClick}
               className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-200 transition"
             >
               {active.ctaPrimary.label}
@@ -744,43 +757,45 @@ export default function HomePage() {
 
     if (active.type === "chat") {
       return (
-        <ChatBox
-          messages={chatMessages}
-          input={chatInput}
-          setInput={setChatInput}
-          onSend={async () => {
-            if (!chatInput.trim() || chatLoading) return;
-            const userMessage = { role: "user", content: chatInput.trim() };
-            const next = [...chatMessages, userMessage];
-            setChatMessages(next);
-            setChatInput("");
-            setChatLoading(true);
-            setChatError("");
-            try {
-              const res = await fetch("/api/chat", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ messages: next, language }),
-              });
-              if (!res.ok) throw new Error("Response unavailable");
-              const data = await res.json();
-              const reply =
-                data.reply ||
-                data.message ||
-                (language === "fr"
-                  ? "Je n'ai pas pu répondre pour le moment."
-                  : "I couldn't answer right now.");
-              setChatMessages((prev) => [...prev, { role: "assistant", content: reply }]);
-            } catch (err) {
-              setChatError(language === "fr" ? "Erreur de réponse, réessaie." : "Error fetching reply, try again.");
-            } finally {
-              setChatLoading(false);
-            }
-          }}
-          loading={chatLoading}
-          error={chatError}
-          placeholder={language === "fr" ? "Pose ta question à Émilie..." : "Ask Emilie..."}
-        />
+        <div id="chat_emilie">
+          <ChatBox
+            messages={chatMessages}
+            input={chatInput}
+            setInput={setChatInput}
+            onSend={async () => {
+              if (!chatInput.trim() || chatLoading) return;
+              const userMessage = { role: "user", content: chatInput.trim() };
+              const next = [...chatMessages, userMessage];
+              setChatMessages(next);
+              setChatInput("");
+              setChatLoading(true);
+              setChatError("");
+              try {
+                const res = await fetch("/api/chat", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ messages: next, language }),
+                });
+                if (!res.ok) throw new Error("Response unavailable");
+                const data = await res.json();
+                const reply =
+                  data.reply ||
+                  data.message ||
+                  (language === "fr"
+                    ? "Je n'ai pas pu répondre pour le moment."
+                    : "I couldn't answer right now.");
+                setChatMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+              } catch (err) {
+                setChatError(language === "fr" ? "Erreur de réponse, réessaie." : "Error fetching reply, try again.");
+              } finally {
+                setChatLoading(false);
+              }
+            }}
+            loading={chatLoading}
+            error={chatError}
+            placeholder={language === "fr" ? "Pose ta question à Émilie..." : "Ask Emilie..."}
+          />
+        </div>
       );
     }
 
